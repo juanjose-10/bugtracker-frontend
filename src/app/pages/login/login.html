@@ -1,0 +1,36 @@
+<div class="auth-container">
+
+  <div class="auth-card">
+
+    <h2>Bug Tracker</h2>
+
+    <input
+      type="email"
+      placeholder="Correo"
+      [(ngModel)]="email"
+    >
+
+    <input
+      type="password"
+      placeholder="Contraseña"
+      [(ngModel)]="password"
+    >
+
+    <button class="btn" (click)="login()">
+      Ingresar
+    </button>
+
+    <p class="message">
+      {{ mensaje }}
+    </p>
+
+    <div class="link">
+      ¿No tienes cuenta?
+      <a routerLink="/register">
+        Regístrate
+      </a>
+    </div>
+
+  </div>
+
+</div>

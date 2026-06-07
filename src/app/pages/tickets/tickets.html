@@ -1,0 +1,149 @@
+<div class="navbar">
+
+  <h2>Bug Tracker</h2>
+
+  <button (click)="logout()">
+    Cerrar sesión
+  </button>
+
+</div>
+
+<div class="container">
+
+  <div class="card">
+
+    <h2>Crear ticket</h2>
+
+    <input
+      type="text"
+      placeholder="Título"
+      [(ngModel)]="tituloTicket"
+    >
+
+    <textarea
+      placeholder="Descripción"
+      [(ngModel)]="descripcionTicket"
+    ></textarea>
+
+    <select [(ngModel)]="prioridadTicket">
+
+      <option value="">
+        Seleccione prioridad
+      </option>
+
+      <option value="Alta">
+        Alta
+      </option>
+
+      <option value="Media">
+        Media
+      </option>
+
+      <option value="Baja">
+        Baja
+      </option>
+
+    </select>
+
+    <button class="btn" (click)="crearTicket()">
+      Crear ticket
+    </button>
+
+    <p class="message">
+      {{ mensaje }}
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <h2>Tickets registrados</h2>
+
+    <button class="btn" (click)="verTickets()">
+      Ver tickets
+    </button>
+
+    <br><br>
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Prioridad</th>
+          <th>Estado</th>
+          <th>Usuario</th>
+          <th>Acciones</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let ticket of tickets">
+
+          <td>{{ ticket.id }}</td>
+
+          <td>{{ ticket.titulo }}</td>
+
+          <td>
+
+            <span
+                class="badge"
+                [ngClass]="{
+                'prioridad-alta': ticket.prioridad === 'Alta',
+                'prioridad-media': ticket.prioridad === 'Media',
+                'prioridad-baja': ticket.prioridad === 'Baja'
+  }"
+>
+  {{ ticket.prioridad }}
+</span>
+
+          </td>
+
+          <td>
+
+            <span
+                class="badge"
+                [ngClass]="{
+                'estado-abierto': ticket.estado === 'abierto',
+                'estado-proceso': ticket.estado === 'en proceso',
+                'estado-cerrado': ticket.estado === 'cerrado'
+  }"
+>
+  {{ ticket.estado }}
+</span>
+
+          </td>
+
+          <td>{{ ticket.usuario }}</td>
+
+          <td>
+
+        <button
+          class="btn-small btn-process"
+          (click)="cambiarEstado(ticket.id, 'en proceso')"
+  >
+          En proceso
+          </button>
+
+        <button
+          class="btn-small btn-close"
+          (click)="cambiarEstado(ticket.id, 'cerrado')"
+  >
+        Cerrar
+  </button>
+
+</td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

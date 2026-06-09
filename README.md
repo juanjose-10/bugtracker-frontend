@@ -1,59 +1,84 @@
-# BugtrackerFrontend
+🎨 Bug Tracker Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+Aplicación web desarrollada con Angular que permite gestionar incidencias de software mediante una interfaz moderna inspirada en herramientas como Jira y Trello.
 
-## Development server
+📋 Descripción del Proyecto
 
-To start a local development server, run:
+Bug Tracker Frontend es la interfaz de usuario encargada de interactuar con la API desarrollada en NestJS.
 
-```bash
-ng serve
-```
+Permite:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Registro de usuarios.
+Inicio de sesión.
+Gestión de tickets.
+Visualización de incidencias.
+Control de estados.
+Administración basada en roles.
 
-## Code scaffolding
+🎯 Objetivo
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Simular un entorno real de trabajo para equipos de desarrollo de software donde QA, Administradores y Desarrolladores colaboran en la gestión de errores.
 
-```bash
-ng generate component component-name
-```
+🖥️ Funcionalidades Implementadas
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Autenticación
+Registro de usuarios.
+Inicio de sesión.
+Persistencia de JWT mediante LocalStorage.
+Gestión de Tickets
+Crear tickets.
+Visualizar tickets.
+Cambiar estados.
+Clasificación por prioridad.
+Interfaz
+Diseño responsive.
+Formularios validados.
+Navegación mediante Angular Router.
 
-```bash
-ng generate --help
-```
+🛠️ Tecnologías Utilizadas
 
-## Building
+Frontend
+Angular 20
+TypeScript
+Angular Router
+HttpClient
+Standalone Components
+HTML5
+CSS3
+Comunicación
+REST API
+JWT Authentication
 
-To build the project run:
+🔐 Roles del Sistema
 
-```bash
-ng build
-```
+👨‍💼 Administrador
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Gestiona usuarios.
+Supervisa tickets.
+Asigna tareas.
 
-## Running unit tests
+🧪 QA
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Reporta errores.
+Registra incidencias.
+Valida correcciones.
 
-```bash
-ng test
-```
+👨‍💻 Desarrollador
 
-## Running end-to-end tests
+Consulta tickets asignados.
+Gestiona estados.
+Corrige errores.
 
-For end-to-end (e2e) testing, run:
+📸 Pantallas
 
-```bash
-ng e2e
-```
+Login
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Autenticación mediante correo y contraseña.
 
-## Additional Resources
+Registro
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Creación de usuarios con rol específico.
+
+Gestión de Tickets
+
+Visualización y administración de incidencias.
